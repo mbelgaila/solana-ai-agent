@@ -88,7 +88,7 @@ export class TwitterCookieAuth {
 
       // Handle potential two-factor or additional verification steps
       const authData = await authResponse.json();
-      if (authData.requires_verification) {
+      if ((authData as any).requires_verification) {
         throw new TwitterAuthError('Two-factor authentication is required but not supported');
       }
 

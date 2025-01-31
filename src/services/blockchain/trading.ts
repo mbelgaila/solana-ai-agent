@@ -101,7 +101,7 @@ export class TradingService {
         `https://price.jup.ag/v4/price?ids=${tokenAddress}`
       );
       const data = await response.json();
-      return data.data[tokenAddress]?.price || 0;
+      return (data as any).data[tokenAddress]?.price || 0;
     } catch (error) {
       console.error('Failed to get token price:', error);
       throw error;

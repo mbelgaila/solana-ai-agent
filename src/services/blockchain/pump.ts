@@ -52,7 +52,7 @@ async function sendLocalCreateTx() {
     console.log("IPFS Upload Response:", ipfsData);
 
     // Get the IPFS CID from the response
-    const ipfsCid = ipfsData.IpfsHash;
+    const ipfsCid = (ipfsData as any).IpfsHash;
 
     // Get the create transaction
     const response = await fetch(`https://pumpportal.fun/api/trade-local`, {

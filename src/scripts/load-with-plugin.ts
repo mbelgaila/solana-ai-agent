@@ -254,7 +254,7 @@ async function main() {
     elizaLogger.success(`Agent "${character.name}" initialized successfully!`);
 
     const directClient = new DirectClient();
-    directClient.registerAgent(runtime);
+    directClient.registerAgent(runtime as any);
     directClient.start(3000);
   }
 

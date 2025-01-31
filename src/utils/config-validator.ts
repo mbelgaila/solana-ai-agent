@@ -1,4 +1,4 @@
-import {logger} from './logger';
+import {logger} from './logger.js';
 
 interface ValidationError {
     path: string[];
@@ -57,8 +57,7 @@ export function validateConfig(config: any): void {
             const requiredIntervals = [
                 'CONTENT_GENERATION_INTERVAL',
                 'MARKET_MONITORING_INTERVAL',
-                'COMMUNITY_ENGAGEMENT_INTERVAL',
-                'TWEET_INTERVAL'
+                'COMMUNITY_ENGAGEMENT_INTERVAL'
             ];
 
             requiredIntervals.forEach(interval => {
